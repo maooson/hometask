@@ -23,7 +23,7 @@ Enter your secret key to [`config.ts`](src/config.ts) file. You can also the cha
 
 ```js
   jwt: {
-    secretOrKey: '__JWT_SECRET_KEY__',
+    secretOrKey: 'w66LT32nkuvDKejOgeHomrqeGNq3e1Bd',
     expiresIn: '2h',
   },
 ```
@@ -47,6 +47,13 @@ $ yarn migrate:deploy:prod
 ```bash
 # development mode
 $ yarn start:dev
+
+After successful launch, go to http://localhost:3300/api in your browser!
+
+# GUI to view and edit data in your database
+$ yarn prisma:studio
+
+Go to http://localhost:5555
 
 # production
 $ yarn build
