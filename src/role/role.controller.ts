@@ -13,6 +13,7 @@ import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { Role as RoleModel } from '@prisma/client';
 import { RoleService } from './role.service';
+import { RoleRequest } from './models';
 
 @ApiTags('roles')
 @Controller('roles')
@@ -33,9 +34,9 @@ export class RoleController {
   @HttpCode(HttpStatus.CREATED)
   @UseGuards(AuthGuard())
   async createRole(
-    @Body() roleData: { name: string; },
+    @Body() createRoleRequest: RoleRequest,
   ): Promise<RoleModel> {
-    const { name } = roleData;
+    const { name } = createRoleRequest;
     return this.roleService.createRole({
       name,
     });

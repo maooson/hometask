@@ -13,7 +13,9 @@ import {
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { UserService } from './user.service';
-import { LoginRequest, LoginResponse, SignupRequest, UserResponse } from './models';
+import {
+  LoginRequest, LoginResponse, SignupRequest, UserResponse,
+} from './models';
 import { Usr } from './user.decorator';
 import { AuthUser } from './auth-user';
 
